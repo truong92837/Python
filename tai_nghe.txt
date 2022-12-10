@@ -1,0 +1,15 @@
+pulseaudio --kill
+
+jack_control start
+
+jack_control exit
+
+pulseaudio --start         // bật mic
+
+https://stackoverflow.com/questions/66775654/how-can-i-make-pulseaudio-run-as-root
+
+testmic
+arecord -d 5 test-mic.wav
+
+nghe
+aplay test-mic.wav

@@ -1,0 +1,5 @@
+oh shitbin/env python3
+python3
+pip --python dash pip package
+pil --python image libary
+pandas  -- 
