@@ -1,0 +1,22 @@
+ghép frame gif
+
+from PIL import Image
+
+images = [Image.new("RGB", size=(300, 21 * 12)) for i in range(10)]
+
+for i in range(120):
+	img = Image.open(f"frame{i + 1}.bmp")
+	images[(i - 1) % 10].paste(img, (0, 21 * ((i - 1) // 10)))
+
+for i in range(10):
+	images[i].save(f"qr{i}.jpg")
+
+
+
+
+
+Decode gif
+for ((i = 0; i < 10; i++))
+do
+	zbarimg "qr$i.jpg"
+done
