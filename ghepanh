@@ -1,22 +1,15 @@
-ghép frame gif
-
 from PIL import Image
 
-images = [Image.new("RGB", size=(300, 21 * 12)) for i in range(10)]
+# Khởi tạo một danh sách chứa 3 ảnh, có đường dẫn tương ứng
+image_paths = ["truong111.png", "truong112.png", "truong113.png"]
 
-for i in range(120):
-	img = Image.open(f"frame{i + 1}.bmp")
-	images[(i - 1) % 10].paste(img, (0, 21 * ((i - 1) // 10)))
+# Tạo một ảnh mới có kích thước phù hợp để chứa 3 ảnh
+sprite = Image.new("RGB", size=(1024, 1024*3))
 
-for i in range(10):
-	images[i].save(f"qr{i}.jpg")
+# Dùng vòng lặp để ghép 3 ảnh vào sprite
+for i, path in enumerate(image_paths):
+    img = Image.open(path)
+    sprite.paste(img, (0, i * 1024))  # vị trí của ảnh trong sprite
 
-
-
-
-
-Decode gif
-for ((i = 0; i < 10; i++))
-do
-	zbarimg "qr$i.jpg"
-done
+# Lưu sprite sheet
+sprite.save("truong_sprite.png")
